@@ -2,7 +2,7 @@ import grid from 'gridfs-stream';
 import mongoose from 'mongoose';
 
 const PORT = process.env.PORT || 8000;
-const url = `http://localhost:${PORT}`;
+const url = `https://whatsappclone-server-backend4.onrender.com`;
  
  
 
