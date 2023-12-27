@@ -15,10 +15,11 @@ const password = process.env.DB_PASSWORD;
 
 Connection(username, password);
 
-app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
-
+// Enable CORS before defining routes
+app.use(cors());
 // Express now has built-in middleware for handling JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 app.use('/', Routes);
+
+app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
