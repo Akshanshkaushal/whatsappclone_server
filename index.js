@@ -14,15 +14,9 @@ const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 
 Connection(username, password);
- 
-// Enable CORS before defining routes
-app.use(cors({
-    origin: ['http://localhost:3000', 'https://whatsapp-clone-forntend-b.vercel.app'],
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-    optionsSuccessStatus: 204,
-}));
 
+// Enable CORS before defining routes
+app.options('*', cors()); // Enable preflight requests for all routes
 
 // Express now has built-in middleware for handling JSON and URL-encoded data
 app.use(express.json());
